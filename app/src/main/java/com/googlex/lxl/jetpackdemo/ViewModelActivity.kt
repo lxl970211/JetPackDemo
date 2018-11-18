@@ -17,12 +17,14 @@ import com.googlex.lxl.jetpackdemo.databinding.ActivityViewModelBinding
 import com.googlex.lxl.jetpackdemo.util.InJectorUtils
 import com.googlex.lxl.jetpackdemo.viewmodel.UserViewModel
 import com.googlex.lxl.jetpackdemo.R
+import com.googlex.lxl.jetpackdemo.adapter.DiffUserAdapter
 
 class ViewModelActivity : AppCompatActivity() {
 
     private var userViewModel: UserViewModel? = null
 
-    private var mAdapter: UserAdapter? = null
+//    private var mAdapter: UserAdapter? = null
+    private var mAdapter : DiffUserAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,13 +34,14 @@ class ViewModelActivity : AppCompatActivity() {
         userViewModel = ViewModelProviders.of(this, factory).get(UserViewModel::class.java)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.itemAnimator = DefaultItemAnimator()
-        mAdapter = UserAdapter()
-
+//        mAdapter = UserAdapter()
+//
+//        binding.recyclerView.adapter = mAdapter
+        mAdapter = DiffUserAdapter()
         binding.recyclerView.adapter = mAdapter
 
         userViewModel!!.users.observe(this, Observer { users ->
-            mAdapter!!.setData(users)
+            mAdapter!!.submitList(users)
             binding.textview.text = users!!.size.toString()
         })
 
@@ -49,7 +52,8 @@ class ViewModelActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                userViewModel!!.deleteUser(mAdapter!!.getUserAt(viewHolder.adapterPosition))
+
+                userViewModel!!.deleteUser(mAdapter!!.getUserAt(viewHolder.adapterPosition)!!)
             }
         }).attachToRecyclerView(binding.recyclerView)
     }

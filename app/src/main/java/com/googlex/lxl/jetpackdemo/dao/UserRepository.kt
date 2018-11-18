@@ -27,7 +27,6 @@ class UserRepository private constructor(private val userDao: UserDao){
         runOnIoThread {
             userDao.deleteUser(user)
         }
-
     }
 
     companion object {
