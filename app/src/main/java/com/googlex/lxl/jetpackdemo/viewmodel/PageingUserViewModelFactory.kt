@@ -3,7 +3,6 @@ package com.googlex.lxl.jetpackdemo.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.googlex.lxl.jetpackdemo.dao.UserRepository
-import com.googlex.lxl.jetpackdemo.fragment.PageingViewModel
 
 class PageingUserViewModelFactory(private val userRepository: UserRepository) :
     ViewModelProvider.NewInstanceFactory(){

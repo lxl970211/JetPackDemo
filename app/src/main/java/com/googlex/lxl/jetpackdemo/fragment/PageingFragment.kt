@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.googlex.lxl.jetpackdemo.R
 import com.googlex.lxl.jetpackdemo.adapter.UserPageingAdapter
 import com.googlex.lxl.jetpackdemo.databinding.PageingFragmentBinding
-import com.googlex.lxl.jetpackdemo.databinding.PageingRvItemBinding
 import com.googlex.lxl.jetpackdemo.util.InJectorUtils
+import com.googlex.lxl.jetpackdemo.viewmodel.PageingViewModel
 import kotlinx.android.synthetic.main.pageing_fragment.*
 
 class PageingFragment : Fragment() {
