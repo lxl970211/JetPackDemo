@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.googlex.lxl.jetpackdemo.ViewModelActivity">
+        tools:context="com.googlex.lxl.jetpackdemo.fragment.ViewModelFragment">
 
 
         <Button
@@ -16,7 +16,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:onClick="add"
             android:text="添加数据"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"

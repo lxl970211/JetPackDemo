@@ -30,12 +30,15 @@ abstract class AppDataBase : RoomDatabase() {
         override fun doInBackground(vararg voids: Void): Void? {
             Log.e("draw-db", "开始填充数据")
 
-            val user1 = User("liu", "xiaolong", 21)
-            val user2 = User("刘", "小龙", 22)
-            val user3 = User("江", "123", 23)
-            val user4 = User("flow", "sunflower", 24)
+            for (i in 1..20){
+                val user1 = User("liu", "xiaolong", 21)
+                val user2 = User("刘", "小龙", 22)
+                val user3 = User("江", "123", 23)
+                val user4 = User("flow", "sunflower", 24)
 
-            userDao.insertUser(user1, user2, user3, user4)
+                userDao.insertUser(user1, user2, user3, user4)
+            }
+
             return null
         }
     }

@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'//kapt 插件
-
+apply plugin: "androidx.navigation.safeargs"
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -48,4 +48,10 @@ dependencies {
 
     kapt 'androidx.room:room-compiler:2.0.0'
     kapt "com.android.databinding:compiler:3.2.1"
+    implementation "android.arch.paging:runtime:1.0.1"
+    def nav_version = "1.0.0-alpha07"
+    implementation "androidx.paging:paging-runtime-ktx:2.1.0-beta01"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
+
 }

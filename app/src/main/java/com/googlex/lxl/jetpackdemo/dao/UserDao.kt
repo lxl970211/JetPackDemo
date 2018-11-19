@@ -1,6 +1,7 @@
 package com.googlex.lxl.jetpackdemo.dao
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
 
 import com.googlex.lxl.jetpackdemo.data.User
@@ -19,5 +20,6 @@ interface UserDao {
     @Delete
     fun deleteUser(user: User)
 
-
+    @Query("SELECT * FROM draw_user")
+    fun allUser() : DataSource.Factory<Int, User>
 }

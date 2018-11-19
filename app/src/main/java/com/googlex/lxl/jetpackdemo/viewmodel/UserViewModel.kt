@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.paging.Config
+import androidx.paging.toLiveData
 import com.googlex.lxl.jetpackdemo.dao.UserRepository
 import com.googlex.lxl.jetpackdemo.data.User
 
@@ -22,5 +24,7 @@ class UserViewModel(private var userRepository: UserRepository) : ViewModel() {
     fun deleteUser(user: User) {
         userRepository.deleteUser(user)
     }
+
+    var allUser = userRepository.allUser.toLiveData(Config(pageSize = 10, enablePlaceholders = true, maxSize = 200))
 
 }

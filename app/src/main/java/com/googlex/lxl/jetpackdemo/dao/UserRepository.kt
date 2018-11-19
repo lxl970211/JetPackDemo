@@ -16,6 +16,7 @@ class UserRepository private constructor(private val userDao: UserDao){
 
     val users: LiveData<List<User>> = userDao.allUsers
 
+    val allUser = userDao.allUser()
 
     fun insert(vararg user: User) {
         runOnIoThread {

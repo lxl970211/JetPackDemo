@@ -3,6 +3,7 @@ package com.googlex.lxl.jetpackdemo.util
 import android.content.Context
 import com.googlex.lxl.jetpackdemo.dao.UserRepository
 import com.googlex.lxl.jetpackdemo.database.AppDataBase
+import com.googlex.lxl.jetpackdemo.viewmodel.PageingUserViewModelFactory
 import com.googlex.lxl.jetpackdemo.viewmodel.UserViewModelFactory
 
 object InJectorUtils{
@@ -16,5 +17,10 @@ object InJectorUtils{
         var factory = getUserRepository(context)
         return UserViewModelFactory(factory)
     }
+
+    fun providePageingUserViewModelFactory(context: Context) : PageingUserViewModelFactory{
+        return PageingUserViewModelFactory(getUserRepository(context))
+    }
+
 
 }

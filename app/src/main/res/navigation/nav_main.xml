@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_main"
+            app:startDestination="@id/centerFragment">
+
+
+    <fragment android:id="@+id/centerFragment"
+              android:name="com.googlex.lxl.jetpackdemo.fragment.CenterFragment"
+              android:label="CenterFragment"
+              tools:layout="@layout/fragment_center">
+
+        <action android:id="@+id/action_centerFragment_to_viewFlipperFragment"
+                app:destination="@id/viewFlipperFragment"/>
+
+        <action android:id="@+id/action_centerFragment_to_viewModelFragment"
+                app:destination="@id/viewModelFragment"/>
+
+        <action android:id="@+id/action_centerFragment_to_pageingFragment"
+                app:destination="@id/pageingFragment"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/viewFlipperFragment"
+              android:name="com.googlex.lxl.jetpackdemo.fragment.ViewFlipperFragment"
+              android:label="ViewFlipperFragment"
+              tools:layout="@layout/fragment_view_flipper"/>
+
+    <fragment android:id="@+id/viewModelFragment"
+              android:name="com.googlex.lxl.jetpackdemo.fragment.ViewModelFragment"
+              android:label="ViewModelFragment"
+              tools:layout="@layout/fragment_view_model"/>
+
+    <fragment android:id="@+id/pageingFragment"
+              android:name="com.googlex.lxl.jetpackdemo.fragment.PageingFragment"
+              android:label="pageing_fragment"
+              tools:layout="@layout/pageing_fragment"/>
+
+
+</navigation>
