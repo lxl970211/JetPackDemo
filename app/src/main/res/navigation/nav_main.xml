@@ -18,23 +18,30 @@
 
         <action android:id="@+id/action_centerFragment_to_pageingFragment"
                 app:destination="@id/pageingFragment"/>
+        <action android:id="@+id/action_centerFragment_to_imageAnimFragment"
+                app:destination="@id/imageAnimFragment"/>
 
     </fragment>
 
     <fragment android:id="@+id/viewFlipperFragment"
               android:name="com.googlex.lxl.jetpackdemo.fragment.ViewFlipperFragment"
-              android:label="ViewFlipperFragment"
+              android:label="视图切换"
               tools:layout="@layout/fragment_view_flipper"/>
 
     <fragment android:id="@+id/viewModelFragment"
               android:name="com.googlex.lxl.jetpackdemo.fragment.ViewModelFragment"
-              android:label="ViewModelFragment"
+              android:label="ViewModelLiveData"
               tools:layout="@layout/fragment_view_model"/>
 
     <fragment android:id="@+id/pageingFragment"
               android:name="com.googlex.lxl.jetpackdemo.fragment.PageingFragment"
-              android:label="pageing_fragment"
+              android:label="Pageing"
               tools:layout="@layout/pageing_fragment"/>
+
+    <fragment android:id="@+id/imageAnimFragment"
+              android:name="com.googlex.lxl.jetpackdemo.fragment.ImageAnimFragment"
+              android:label="Anim"
+              tools:layout="@layout/fragment_image_anim"/>
 
 
 </navigation>

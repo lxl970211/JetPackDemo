@@ -41,6 +41,14 @@ class CenterFragment : Fragment() {
             it.findNavController().navigate(CenterFragmentDirections.ActionCenterFragmentToPageingFragment())
         }
 
+        btn_anim.setOnClickListener {
+            it.findNavController().navigate(CenterFragmentDirections.ActionCenterFragmentToImageAnimFragment())
+        }
+
+        btn_rotate3d.setOnClickListener {
+
+        }
+
 
     }
 }
