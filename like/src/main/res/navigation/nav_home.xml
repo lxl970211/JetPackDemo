@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_home"
+            app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment"
+              android:name="com.bx.like.fragment.HomeFragment"
+              android:label="@string/title_home"
+              tools:layout="@layout/home_fragment"/>
+
+    <fragment android:id="@+id/forumFragment"
+              android:name="com.bx.like.fragment.ForumFragment"
+              android:label="@string/title_dashboard"
+              tools:layout="@layout/forum_fragment"/>
+
+    <fragment android:id="@+id/mineFragment"
+              android:name="com.bx.like.fragment.MineFragment"
+              android:label="@string/mine"
+              tools:layout="@layout/mine_fragment"/>
+</navigation>
