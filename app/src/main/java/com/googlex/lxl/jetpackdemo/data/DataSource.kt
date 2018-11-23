@@ -3,7 +3,7 @@ package com.googlex.lxl.jetpackdemo.data
 import android.util.Log
 import androidx.lifecycle.LiveData
 
-class DataSource private constructor(){
+class DataSource {
 
 
     private val data = ArrayList<User>()

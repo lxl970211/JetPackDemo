@@ -18,6 +18,7 @@
 
         <action android:id="@+id/action_centerFragment_to_pageingFragment"
                 app:destination="@id/pageingFragment"/>
+
         <action android:id="@+id/action_centerFragment_to_imageAnimFragment"
                 app:destination="@id/imageAnimFragment"/>
 

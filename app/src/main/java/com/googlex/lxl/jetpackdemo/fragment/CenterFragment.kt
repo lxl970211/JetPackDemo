@@ -27,7 +27,6 @@ class CenterFragment : Fragment() {
 
         btn_view_model.setOnClickListener {
             it.findNavController().navigate(CenterFragmentDirections.ActionCenterFragmentToViewModelFragment())
-
         }
 
 
@@ -46,7 +45,7 @@ class CenterFragment : Fragment() {
         }
 
         btn_rotate3d.setOnClickListener {
-
+            Retate3DDialogFragment().show(fragmentManager, "3d")
         }
 
 
