@@ -24,11 +24,11 @@ class GalleryRepository private constructor(private val contentResolver: Content
                 imageProjection,
                 null,
                 null,
-                MediaStore.Images.Media.DATE_MODIFIED + "DESC LIMIT 100"
+                MediaStore.Images.Media.DATE_MODIFIED + " DESC LIMIT 100"
             )
 
 
-            allImages.value = cursor.let {
+            var list = cursor.let {
                 var images = ArrayList<GalleryImageBean>()
 
                 while (it.moveToNext()) {
@@ -45,8 +45,12 @@ class GalleryRepository private constructor(private val contentResolver: Content
                         GalleryImageBean(dataPath, id, imageName, addedDate, modifiedDate, mimeType, width, height)
                     images.add(galleryImageBean)
                 }
+
                 images
             }
+            cursor.close()
+            allImages.postValue(list)
+
         }
 
     }
@@ -54,7 +58,7 @@ class GalleryRepository private constructor(private val contentResolver: Content
 
     companion object {
 
-        val uri: Uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val uri: Uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
 
         val imageProjection = arrayOf(
             MediaStore.Images.ImageColumns.DATA,
@@ -75,7 +79,7 @@ class GalleryRepository private constructor(private val contentResolver: Content
 
         private var instance: GalleryRepository? = null
 
-        public fun getInstance(contentResolver: ContentResolver): GalleryRepository {
+         fun getInstance(contentResolver: ContentResolver): GalleryRepository {
             return instance ?: synchronized(this) {
                 instance ?: GalleryRepository(contentResolver).also { instance = it }
             }
