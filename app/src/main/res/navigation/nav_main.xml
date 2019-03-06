@@ -21,6 +21,7 @@
 
         <action android:id="@+id/action_centerFragment_to_imageAnimFragment"
                 app:destination="@id/imageAnimFragment"/>
+        <action android:id="@+id/action_centerFragment_to_galleryFragment" app:destination="@id/galleryFragment"/>
 
     </fragment>
 
@@ -43,6 +44,8 @@
               android:name="com.googlex.lxl.jetpackdemo.fragment.ImageAnimFragment"
               android:label="Anim"
               tools:layout="@layout/fragment_image_anim"/>
+    <fragment android:id="@+id/galleryFragment" android:name="com.googlex.lxl.jetpackdemo.fragment.GalleryFragment"
+              android:label="gallery_fragment" tools:layout="@layout/gallery_fragment"/>
 
 
 </navigation>

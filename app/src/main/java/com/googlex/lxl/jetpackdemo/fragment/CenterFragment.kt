@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.googlex.lxl.jetpackdemo.BottomSheetDialogReply
 import com.googlex.lxl.jetpackdemo.R
 import com.googlex.lxl.jetpackdemo.databinding.FragmentCenterBinding
 import kotlinx.android.synthetic.main.fragment_center.*
@@ -26,27 +27,35 @@ class CenterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btn_view_model.setOnClickListener {
-            it.findNavController().navigate(CenterFragmentDirections.ActionCenterFragmentToViewModelFragment())
+            it.findNavController().navigate(CenterFragmentDirections.actionCenterFragmentToViewModelFragment())
         }
 
 
         btn_view_flipper.setOnClickListener {
             var directions =
-                CenterFragmentDirections.ActionCenterFragmentToViewFlipperFragment()
+
+                CenterFragmentDirections.actionCenterFragmentToViewFlipperFragment()
             it.findNavController().navigate(directions)
         }
 
         btn_page.setOnClickListener {
-            it.findNavController().navigate(CenterFragmentDirections.ActionCenterFragmentToPageingFragment())
+            it.findNavController().navigate(CenterFragmentDirections.actionCenterFragmentToPageingFragment())
         }
 
         btn_anim.setOnClickListener {
-            it.findNavController().navigate(CenterFragmentDirections.ActionCenterFragmentToImageAnimFragment())
+            it.findNavController().navigate(CenterFragmentDirections.actionCenterFragmentToImageAnimFragment())
         }
 
         btn_rotate3d.setOnClickListener {
-            Retate3DDialogFragment().show(fragmentManager, "3d")
+
+            BottomSheetDialogReply(context).show()
+
         }
+
+        btn_gallery.setOnClickListener {
+            it.findNavController().navigate(CenterFragmentDirections.actionCenterFragmentToGalleryFragment())
+        }
+
 
 
     }
