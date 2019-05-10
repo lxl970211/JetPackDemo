@@ -10,25 +10,19 @@
               android:label="CenterFragment"
               tools:layout="@layout/fragment_center">
 
-        <action android:id="@+id/action_centerFragment_to_viewFlipperFragment"
-                app:destination="@id/viewFlipperFragment"/>
-
         <action android:id="@+id/action_centerFragment_to_viewModelFragment"
                 app:destination="@id/viewModelFragment"/>
 
         <action android:id="@+id/action_centerFragment_to_pageingFragment"
                 app:destination="@id/pageingFragment"/>
 
-        <action android:id="@+id/action_centerFragment_to_imageAnimFragment"
-                app:destination="@id/imageAnimFragment"/>
-        <action android:id="@+id/action_centerFragment_to_galleryFragment" app:destination="@id/galleryFragment"/>
+        <action android:id="@+id/action_centerFragment_to_galleryFragment"
+                app:destination="@id/galleryFragment"/>
+        <action android:id="@+id/action_centerFragment_to_editActivity" app:destination="@id/editActivity"/>
+
 
     </fragment>
 
-    <fragment android:id="@+id/viewFlipperFragment"
-              android:name="com.googlex.lxl.jetpackdemo.fragment.ViewFlipperFragment"
-              android:label="视图切换"
-              tools:layout="@layout/fragment_view_flipper"/>
 
     <fragment android:id="@+id/viewModelFragment"
               android:name="com.googlex.lxl.jetpackdemo.fragment.ViewModelFragment"
@@ -40,12 +34,12 @@
               android:label="Pageing"
               tools:layout="@layout/pageing_fragment"/>
 
-    <fragment android:id="@+id/imageAnimFragment"
-              android:name="com.googlex.lxl.jetpackdemo.fragment.ImageAnimFragment"
-              android:label="Anim"
-              tools:layout="@layout/fragment_image_anim"/>
-    <fragment android:id="@+id/galleryFragment" android:name="com.googlex.lxl.jetpackdemo.fragment.GalleryFragment"
-              android:label="gallery_fragment" tools:layout="@layout/gallery_fragment"/>
+    <fragment android:id="@+id/galleryFragment"
+              android:name="com.googlex.lxl.jetpackdemo.fragment.GalleryFragment"
+              android:label="gallery_fragment"
+              tools:layout="@layout/gallery_fragment"/>
+    <activity android:id="@+id/editActivity" android:name="com.googlex.lxl.jetpackdemo.EditActivity"
+              android:label="edit_activity" tools:layout="@layout/edit_activity"/>
 
 
 </navigation>

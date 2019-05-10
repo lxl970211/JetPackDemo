@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.googlex.lxl.jetpackdemo.data.User
-import com.googlex.lxl.jetpackdemo.databinding.UserRvItemsBinding
+import com.googlex.lxl.jetpackdemo.databinding.UserRvItemBinding
 
 class DiffUserAdapter : ListAdapter<User, DiffUserAdapter.ViewHolder>(UserDiffUtilCallBack()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(UserRvItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ViewHolder(UserRvItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -28,12 +28,11 @@ class DiffUserAdapter : ListAdapter<User, DiffUserAdapter.ViewHolder>(UserDiffUt
     }
 
     class ViewHolder(
-        private val binding: UserRvItemsBinding
+        private val binding: UserRvItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun  bind( userItem: User){
+        fun  bind(userItem: User){
             binding.apply {
-                user = userItem
                 executePendingBindings()
             }
         }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/edit_navigation"
+            app:startDestination="@id/editMainFragment">
+
+
+    <fragment android:id="@+id/editMainFragment"
+              android:name="com.googlex.lxl.jetpackdemo.ui.editmain.EditMainFragment"
+              android:label="edit_main_fragment"
+              tools:layout="@layout/edit_main_fragment">
+        <action android:id="@+id/action_editMainFragment_to_filterFragment" app:destination="@id/filterFragment"/>
+        <action android:id="@+id/action_editMainFragment_to_frameFragment" app:destination="@id/frameFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/filterFragment" android:name="com.googlex.lxl.jetpackdemo.FilterFragment"
+              android:label="fragment_filter" tools:layout="@layout/fragment_filter">
+
+    </fragment>
+    <fragment android:id="@+id/frameFragment" android:name="com.googlex.lxl.jetpackdemo.FrameFragment"
+              android:label="fragment_frame" tools:layout="@layout/fragment_frame"/>
+</navigation>
