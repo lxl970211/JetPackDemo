@@ -8,7 +8,8 @@ data class GalleryImageBean(
     var modifiedDate: Long = 0L,
     var mimeType: String = "",
     var width: Int = 0,
-    var height: Int = 0
+    var height: Int = 0,
+    var select : Boolean = false
 )
 
 

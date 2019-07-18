@@ -56,7 +56,9 @@ class CenterFragment : Fragment() {
             it.findNavController().navigate(CenterFragmentDirections.actionCenterFragmentToGalleryFragment())
         }
 
-
+        btn_notifi.setOnClickListener {
+            it.findNavController().navigate(CenterFragmentDirections.actionCenterFragmentToBlankFragment())
+        }
 
     }
 }

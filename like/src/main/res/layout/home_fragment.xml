@@ -1,33 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/consAssets"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragment.HomeFragment">
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingLeft="15dp"
+        android:paddingTop="12dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewLineConsAssetsTop"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_home"/>
-    <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button"
-            />
-    <ImageView
+            android:id="@+id/tvAssetsTitle"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="1:1"
-            tools:layout_editor_absoluteX="16dp"
-            app:layout_constraintTop_toBottomOf="@id/button"
+            android:layout_height="wrap_content"
+            android:text="assetsTitle"
+            android:textColor="#ff333333"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tvAssetsDetail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/tvAssetsDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:drawablePadding="8dp"
+            android:text="2019"
+            android:textColor="#ff666666"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvAssetsTitle"
+            app:layout_constraintLeft_toRightOf="@+id/tvAssetsTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAssetsTitle" />
+
+    <TextView
+            android:id="@+id/tvAssets"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:singleLine="true"
+            android:textColor="#ff666666"
+            android:textSize="18sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:id="@+id/imageView"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvAssetsTitle"
+            tools:text="1,000.00" />
 
+    <LinearLayout
+            android:id="@+id/llyYesterdayIncome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/llyAccumulative"
+            app:layout_constraintTop_toBottomOf="@+id/tvAssets">
+
+        <TextView
+                android:id="@+id/tvYesterdayIncomeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ssdf"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAssets" />
+
+        <TextView
+                android:id="@+id/tvYesterdayIncome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="#ffff801a"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvYesterdayIncomeTitle"
+                app:layout_constraintLeft_toRightOf="@+id/tvYesterdayIncomeTitle"
+                app:layout_constraintRight_toLeftOf="@+id/tvAccumulativeTitle"
+                app:layout_constraintTop_toTopOf="@+id/tvYesterdayIncomeTitle"
+                tools:text="+11001111111111.00" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/llyAccumulative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toRightOf="@+id/llyYesterdayIncome"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/llyYesterdayIncome">
+
+        <TextView
+                android:id="@+id/tvAccumulativeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:singleLine="true"
+                android:text="sdfsdf"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvYesterdayIncomeTitle"
+                app:layout_constraintLeft_toRightOf="@+id/tvYesterdayIncome"
+                app:layout_constraintRight_toLeftOf="@+id/tvAccumulative"
+                app:layout_constraintTop_toTopOf="@+id/tvYesterdayIncomeTitle" />
+
+        <TextView
+                android:id="@+id/tvAccumulative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:singleLine="true"
+                android:textColor="#ff666666"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvYesterdayIncomeTitle"
+                app:layout_constraintLeft_toRightOf="@+id/tvAccumulativeTitle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvYesterdayIncomeTitle"
+                tools:text="+11111111111111.00" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
