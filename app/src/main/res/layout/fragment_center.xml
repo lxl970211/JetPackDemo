@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -10,13 +10,81 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
+        <Button
+                style="@style/centerButtonStyle"
+                android:id="@+id/btn_view_flipper"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/rv_item_center"
-                tools:itemCount="6"/>
+                android:layout_height="wrap_content"
+                android:text="ViewFlipper"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ViewModel"
+                style="@style/centerButtonStyle"
+
+                android:id="@+id/btn_view_model"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_view_flipper"/>
+
+        <Button
+                android:layout_width="match_parent"
+                style="@style/centerButtonStyle"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_view_model"
+                android:text="pageing"
+                android:id="@+id/btn_page"
+        />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/centerButtonStyle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_page"
+                android:text="anim"
+                android:id="@+id/btn_anim"
+        />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/centerButtonStyle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_anim"
+                android:text="rotate 3d"
+                android:id="@+id/btn_rotate3d"
+        />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/centerButtonStyle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_rotate3d"
+                android:text="相册"
+                android:id="@+id/btn_gallery"
+        />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/centerButtonStyle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_gallery"
+                android:text="列表刷新"
+                android:id="@+id/btn_notifi"
+        />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
