@@ -1,6 +1,7 @@
 package com.googlex.lxl.jetpackdemo.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,13 +9,20 @@ import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.googlex.lxl.jetpackdemo.BottomSheetDialogReply
 import com.googlex.lxl.jetpackdemo.R
 import com.googlex.lxl.jetpackdemo.databinding.FragmentCenterBinding
 import kotlinx.android.synthetic.main.fragment_center.*
 
 class CenterFragment : Fragment() {
 
+    init {
+        test()
+    }
+
+    fun test(){
+        Log.e("CenterFragment","CenterFragment init")
+
+    }
     private var binding : FragmentCenterBinding? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate<FragmentCenterBinding>(inflater,
@@ -47,8 +55,6 @@ class CenterFragment : Fragment() {
         }
 
         btn_rotate3d.setOnClickListener {
-
-            BottomSheetDialogReply(context).show()
 
         }
 
