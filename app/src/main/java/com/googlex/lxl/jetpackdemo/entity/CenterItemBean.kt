@@ -7,6 +7,7 @@ data class CenterItemBean(var title : String,
         val EDIT = 1
         val PAGEING = 2;
         val VIEWMODEL_SAMPLE = 3;
+        val RXJAVA = 4;
     }
 
 }

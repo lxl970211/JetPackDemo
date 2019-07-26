@@ -3,6 +3,8 @@ package com.googlex.lxl.jetpackdemo
 import org.junit.Test
 
 import org.junit.Assert.*
+import org.junit.runner.RunWith
+import org.junit.runners.JUnit4
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,6 +14,13 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        var lists = listOf<Person>(Person("google"), Person("micro", age = 30))
+        val oldest = lists.maxBy {
+            it.age ?:0
+        }
+        println("oldest ${oldest.name}")
+
     }
 }
+
+data class Person(val name : String, val age : Int = 0)
